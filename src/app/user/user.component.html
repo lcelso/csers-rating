@@ -1,0 +1,275 @@
+
+<div class="container-fluid">
+	<div class="row">
+			<!-- <div class="col-lg-4 col-md-5">
+					<div class="card card-user">
+						<div class="image">
+							<img src="assets/img/background.jpg" alt="..."/>
+						</div>
+						<div class="content">
+							<div class="author">
+							  <img class="avatar border-white" src="assets/img/faces/face-2.jpg" alt="..."/>
+							  <h4 class="title">Chet Faker<br />
+								 <a href="#"><small>@chetfaker</small></a>
+							  </h4>
+							</div>
+							<p class="description text-center">
+								"I like the way you work it <br>
+								No diggity <br>
+								I wanna bag it up"
+							</p>
+						</div>
+						<hr>
+						<div class="text-center">
+							<div class="row">
+								<div class="col-md-3 col-md-offset-1">
+									<h5>12<br /><small>Files</small></h5>
+								</div>
+								<div class="col-md-4">
+									<h5>2GB<br /><small>Used</small></h5>
+								</div>
+								<div class="col-md-3">
+									<h5>24,6$<br /><small>Spent</small></h5>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="header">
+							<h4 class="title">Team Members</h4>
+						</div>
+						<div class="content">
+							<ul class="list-unstyled team-members">
+										<li>
+											<div class="row">
+												<div class="col-xs-3">
+													<div class="avatar">
+														<img src="assets/img/faces/face-0.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+													</div>
+												</div>
+												<div class="col-xs-6">
+													DJ Khaled
+													<br />
+													<span class="text-muted"><small>Offline</small></span>
+												</div>
+
+												<div class="col-xs-3 text-right">
+													<button class="btn btn-sm btn-success btn-icon"><i class="fa fa-envelope"></i></button>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="row">
+												<div class="col-xs-3">
+													<div class="avatar">
+														<img src="assets/img/faces/face-1.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+													</div>
+												</div>
+												<div class="col-xs-6">
+													Creative Tim
+													<br />
+													<span class="text-success"><small>Available</small></span>
+												</div>
+
+												<div class="col-xs-3 text-right">
+													<button class="btn btn-sm btn-success btn-icon"><i class="fa fa-envelope"></i></button>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="row">
+												<div class="col-xs-3">
+													<div class="avatar">
+														<img src="assets/img/faces/face-3.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+													</div>
+												</div>
+												<div class="col-xs-6">
+													Flume
+													<br />
+													<span class="text-danger"><small>Busy</small></span>
+												</div>
+
+												<div class="col-xs-3 text-right">
+													<button class="btn btn-sm btn-success btn-icon"><i class="fa fa-envelope"></i></button>
+												</div>
+											</div>
+										</li>
+									</ul>
+						</div>
+					</div>
+				</div> -->
+		<div class="col-lg-12 col-md-7">
+			<div class="card">
+				<div class="header">
+					<h4 class="title">{{ title }}</h4>
+				</div>
+				<div class="content">
+					<div [hidden]="submitted">
+						<form (ngSubmit)="onSubmit()">
+							<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+								<li class="nav-item active">
+									<a class="nav-link active"
+										id="geral-tab"
+										data-toggle="pill"
+										href="#pills-home" role="tab"
+										aria-controls="pills-home"
+										aria-selected="true">Geral</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link"
+										id="pills-profile-tab"
+										data-toggle="pill"
+										href="#pills-profile"
+										role="tab"
+										aria-controls="pills-profile"
+										aria-selected="false">0utras Informações</a>
+								</li>
+							</ul>
+							<div class="tab-content" id="pills-tabContent">
+								<div class="tab-pane fade active in"
+									id="pills-home" role="tabpanel"
+									aria-labelledby="geral-tab">
+
+									<div class="row">
+											<div class="col-md-5">
+												<div class="form-group">
+													<label for="fullName">Nome Completo:</label>
+													<input type="text"
+														id="fullName"
+														[(ngModel)]="users.name"
+														name="name"
+														class="form-control border-input"
+														placeholder="Nome Completo">
+												</div>
+											</div>
+
+											<div class="col-md-3">
+												<div class="form-group">
+													<label for="birthday">Data de Nascimento</label>
+													<input type="date"
+														id="birthday"
+														[(ngModel)]="users.birthday"
+														name="birthday"
+														class="form-control border-input"
+														placeholder="Data de Nascimento" />
+												</div>
+											</div>
+									</div>
+
+									<div class="row">
+										<!-- <div class="col-md-1">
+											<div class="checkbox" [style.margin-top]="'35px'">
+												<input id="active"
+													[(ngModel)]="users.active"
+													checked="checked"
+													[ngModelOptions]="{standalone: true}"
+													type="checkbox" />
+												<label for="active">
+													Ativo
+												</label>
+											</div>
+										</div> -->
+
+										<div class="col-md-2">
+											<div class="form-group">
+												<label for="capitulo">Capítulo:</label>
+												<select  class="form-control border-input"
+													id="capitulo"
+													required
+													[(ngModel)]="users.capitulo"
+													name="capitulo">
+													<option value="android">Android</option>
+													<option value="agilidade">Agilidade</option>
+													<option value="design">Design</option>
+													<option value="devops">Devops</option>
+													<option value="dotnet">Dotnet</option>
+													<option value="ios">IOS</option>
+													<option value="java">Java</option>
+													<option value="javascript/python">Javascript / Python</option>
+													<option value="produto">Produto</option>
+													<option value="qa">QA</option>
+												</select>
+											</div>
+										</div>
+
+										<div class="col-md-3">
+											<div class="form-group">
+												<label for="hiringDate">Data de Contração</label>
+												<input type="date"
+													id="hiringDate"
+													[(ngModel)]="users.hiringDate"
+													name="hiringDate"
+													class="form-control border-input"
+													placeholder="Data de Contração" />
+											</div>
+										</div>
+
+										<div class="col-md-3">
+											<div class="form-group">
+												<label for="role">Cargo</label>
+												<input type="text"
+													id="role"
+													[(ngModel)]="users.role"
+													name="role"
+													class="form-control border-input"
+													placeholder="Cargo" />
+											</div>
+										</div>
+
+										<div class="col-md-2">
+											<div class="form-group">
+												<label for="level">Nível:</label>
+												<select  class="form-control border-input"
+													id="level"
+													required
+													[(ngModel)]="users.level"
+													name="level">
+													<option value="jr">Jr</option>
+													<option value="pleno">Pleno</option>
+													<option value="senior">Senior</option>
+												</select>
+											</div>
+										</div>
+
+									</div>
+
+								</div>
+								<div class="tab-pane fade"
+									id="pills-profile" role="tabpanel"
+									aria-labelledby="pills-profile-tab">
+
+									conteudo aqui
+
+								</div>
+							</div>
+
+
+
+							<div *ngIf="!isEdit" class="text-center">
+								<button
+									type="submit"
+									class="btn btn-info btn-fill btn-wd">Salvar</button>
+							</div>
+
+							<div *ngIf="isEdit" class="text-center">
+								<button
+									(click)="updateUser(user)"
+									class="btn btn-info btn-fill btn-wd">Salvar Edição</button>
+							</div>
+
+
+							<div class="clearfix"></div>
+						</form>
+					</div>
+
+
+
+					<div [hidden]="!submitted">
+						<h4>{{ subtitle }}</h4>
+						<button class="btn btn-success" (click)="newUser()">Adicionar Novo</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,30 @@
+<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card">
+					<div class="header">
+						<h4 class="title">Lista dos Cadastrados</h4>
+						<p class="category">descrição vem aqui</p>
+					</div>
+					<div class="content table-responsive table-full-width">
+						<form id="filter">
+							<label>Digite o nome do Cser:</label>
+							<input type="text" name="term" [(ngModel)]="term" />
+						</form>
+
+						<table class="table table-striped">
+							<tbody>
+								<tr *ngFor="let item of users | filter: term; let i = index">
+									<td>{{ i + 1 }}</td>
+									<td>{{ item.name }}</td>
+									<td>{{ item.capitulo }}</td>
+									<td>{{ item.level }}</td>
+									<td><a [routerLink]="['/user/cad-one-on-one', item.key]">cadastra 1x1</a></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
